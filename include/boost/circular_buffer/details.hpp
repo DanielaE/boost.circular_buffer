@@ -143,6 +143,8 @@ struct assign_range {
     void operator () (Pointer p) const {
         boost::cb_details::uninitialized_copy(m_first, m_last, p, m_alloc);
     }
+private:
+    assign_range& operator=(const assign_range&);
 };
 
 template <class Iterator, class Alloc>
